@@ -73,7 +73,7 @@ pipeline{
                }
             }
         }
-        stage('Jar file Push : Jfrog '){
+/*        stage('Jar file Push : Jfrog '){
          when { expression {  params.action == 'create' } }
             steps{
                script{
@@ -81,7 +81,7 @@ pipeline{
                    jfrogPush()
                }
             }
-        } 
+        } */
 
         stage('Docker Image Build'){
          when { expression {  params.action == 'create' } }
