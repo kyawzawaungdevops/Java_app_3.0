@@ -69,7 +69,6 @@ pipeline {
                     )]) {
                         sh "jfrog rt config --interactive=false --url='https://your-artifactory-url' --user=$USER --password=$PASS --interactive=false"
                         sh "jfrog rt u '/var/lib/jenkins/workspace/Jenkins-pipeline-project/target/kubernetes-configmap-reload-0.0.1-SNAPSHOT.jar' 'test' --recursive=true"
-                        jfrogPush()
                     }
                 }
             }
