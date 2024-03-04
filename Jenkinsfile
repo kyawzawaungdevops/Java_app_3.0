@@ -55,7 +55,15 @@ pipeline {
                 }
             }
         }
-
+        stage('Maven Build : maven'){
+         when { expression {  params.action == 'create' } }
+            steps{
+               script{
+                   
+                   mvnBuild()
+               }
+            }
+        }
         stage('Jar file Push : Jfrog ') {
             when {
                 expression { params.action == 'create' }
