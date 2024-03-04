@@ -67,7 +67,7 @@ pipeline {
                         usernameVariable: "USER",
                         passwordVariable: "PASS"
                     )]) {
-                        sh "jfrog rt config --interactive=false --url='http://3.95.172.103:8082/artifactory' --user=$USER --password=$PASS --interactive=false"
+                        sh "jfrog rt config --interactive=false --url='http://<EC2_IP>:8082/artifactory' --user=$USER --password=$PASS --interactive=false"
                         sh "jfrog rt u '/var/lib/jenkins/workspace/Jenkins-pipeline-project/target/kubernetes-configmap-reload-0.0.1-SNAPSHOT.jar' 'test' --recursive=true"
                     }
                 }
